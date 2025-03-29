@@ -3,54 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Ishaan Mittal</title>
+  <title>Ishaan Mittal Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="theme-toggle">
-      <button id="theme-button">🌞</button>
+  <!-- Header Section -->
+  <header id="home">
+    <div class="container">
+      <div class="theme-toggle">
+        <button id="theme-button">🌞</button>
+      </div>
+      <h1 class="main-title">Ishaan Mittal</h1>
+      <p class="subtitle">A 17-year-old pursuing Software Engineering</p>
+      <nav class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <h1>Ishaan Mittal</h1>
-    <p>A 17-year-old pursuing Software Engineering</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Ishaan Mittal, a passionate learner and aspiring software engineer.</p>
+  <!-- About Me Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello! I'm Ishaan Mittal, a passionate learner and aspiring software engineer. I love solving complex problems and building innovative applications that make a difference.</p>
+      <p>My journey in software engineering began with curiosity about how technology shapes our world. I’m currently exploring web development, AI, and software design.</p>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Project Gallery</h2>
-    <div class="gallery">
-      <!-- Example Project -->
-      <div class="project-card">
-        <h3>Project Title 1</h3>
-        <p>Description of the first project.</p>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Project Gallery</h2>
+      <div class="gallery">
+        <!-- Example Project Cards -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300" alt="Project Image">
+          <h3>Project Title 1</h3>
+          <p>A brief description of the project goes here.</p>
+        </div>
+
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300" alt="Project Image">
+          <h3>Project Title 2</h3>
+          <p>A brief description of another project goes here.</p>
+        </div>
+
+        <!-- Add more projects as needed -->
       </div>
-      <!-- Add more project cards as needed -->
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out on any of these platforms:</p>
-    <div class="social-icons">
-      <a href="#" target="_blank">📧 Email</a>
-      <a href="#" target="_blank">🐦 Twitter</a>
-      <a href="#" target="_blank">💼 LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>&copy; 2025 Ishaan Mittal. All rights reserved.</footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out to me on any of these platforms:</p>
+      <div class="social-icons">
+        <!-- Add links to your social media profiles -->
+        <a href="#" target="_blank"><img src="./icons/email.svg" alt="Email Icon"> Email</a>
+        <a href="#" target="_blank"><img src="./icons/twitter.svg" alt="Twitter Icon
