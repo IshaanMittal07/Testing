@@ -7,9 +7,7 @@ themeCheckbox.addEventListener('change', () => {
     localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
 });
 
-// Load saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
+if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
     themeCheckbox.checked = true;
 }
@@ -21,18 +19,10 @@ const navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
-    
-    // Hamburger animation
     const spans = hamburger.querySelectorAll('span');
-    if (hamburger.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
+    spans[0].style.transform = hamburger.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : 'none';
+    spans[1].style.opacity = hamburger.classList.contains('active') ? '0' : '1';
+    spans[2].style.transform = hamburger.classList.contains('active') ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
 });
 
 // Smooth Scroll
