@@ -1,0 +1,38 @@
+import sympy as sp
+
+def get_function_input(var):
+    expr = input(f"Enter a function in terms of {var}: ")
+    return sp.sympify(expr)
+
+def get_limits(var):
+    a = float(input(f"Enter the lower limit of integration ({var}): "))
+    b = float(input(f"Enter the upper limit of integration ({var}): "))
+    return a, b
+
+def main():
+    # Choose variable
+    var_input = input("Choose the variable of integration (x or y): ").strip().lower()
+    if var_input not in ['x', 'y']:
+        print("Invalid variable. Please enter 'x' or 'y'.")
+        return
+    
+    var = sp.Symbol(var_input)
+    
+    # Get functions from user
+    print(f"\nEnter the first function f({var_input}):")
+    f1 = get_function_input(var)
+    print(f"Enter the second function g({var_input}):")
+    f2 = get_function_input(var)
+    
+    # Get limits
+    a, b = get_limits(var_input)
+
+    # Calculate area
+    integrand = sp.Abs(f1 - f2)
+    area = sp.integrate(integrand, (var, a, b))
+    
+    print(f"\nThe area between the curves from {a} to {b} with respect to {var_input} is:")
+    print(f"Area = {area.evalf()}")
+
+if __name__ == "__main__":
+    main()
