@@ -1,0 +1,24 @@
+import math
+
+def calculate_standard_deviation(data, sample=True):
+    if len(data) < 2:
+        raise ValueError("Dataset must contain at least two values.")
+
+    mean = sum(data) / len(data)
+    squared_diffs = [(x - mean) ** 2 for x in data]
+    
+    if sample:
+        variance = sum(squared_diffs) / (len(data) - 1)
+    else:
+        variance = sum(squared_diffs) / len(data)
+
+    std_deviation = math.sqrt(variance)
+    return std_deviation
+
+# Example usage:
+dataset = [10, 12, 23, 23, 16, 23, 21, 16]
+std_dev_sample = calculate_standard_deviation(dataset, sample=True)
+std_dev_population = calculate_standard_deviation(dataset, sample=False)
+
+print(f"Sample Standard Deviation: {std_dev_sample:.2f}")
+print(f"Population Standard Deviation: {std_dev_population:.2f}")
