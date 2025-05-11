@@ -1,9 +1,9 @@
 const compliments = [
-    "You're the heart of our home ❤️",
-    "Thank you for your endless love 🌼",
+    "You're always sacrificing for us ❤️",
+    "Thank you for your endless love and help 🌼",
     "You're my role model and best friend 🌟",
-    "Your hugs heal everything 🤗",
-    "You're stronger than you know 💪",
+    "Your cooking is unreplacable 🤗",
+    "You're stronger than everyone, even Papa 💪",
   ];
   
   function showCompliment() {
