@@ -1,0 +1,57 @@
+import time
+
+def slow_print(text):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(0.03)
+    print()
+
+def start_game():
+    slow_print("You wake up in a dimly lit room with a locked door.")
+    slow_print("There’s a table with a box, a locked drawer, and a painting on the wall.")
+    
+    has_key = False
+    drawer_unlocked = False
+
+    while True:
+        slow_print("\nWhat would you like to do?")
+        slow_print("Options: [inspect box], [inspect drawer], [inspect painting], [open door], [quit]")
+        choice = input("> ").lower()
+
+        if choice == "inspect box":
+            slow_print("The box has a 3-digit code lock.")
+            code = input("Enter the 3-digit code: ")
+            if code == "314":
+                slow_print("The box clicks open! Inside is a small key.")
+                has_key = True
+            else:
+                slow_print("Wrong code.")
+
+        elif choice == "inspect drawer":
+            if drawer_unlocked:
+                slow_print("The drawer is already open. Nothing else inside.")
+            elif has_key:
+                slow_print("You use the key to unlock the drawer. Inside is a note: 'PI'")
+                drawer_unlocked = True
+            else:
+                slow_print("It's locked. Maybe there's a key somewhere?")
+
+        elif choice == "inspect painting":
+            slow_print("You look behind the painting and see a scribble: '3.14'")
+
+        elif choice == "open door":
+            if drawer_unlocked:
+                slow_print("You found a hidden door switch behind the drawer. The door opens! You escaped!")
+                break
+            else:
+                slow_print("The door is locked tight. There must be a hidden mechanism.")
+
+        elif choice == "quit":
+            slow_print("You gave up. The room remains your prison.")
+            break
+
+        else:
+            slow_print("Invalid action. Try again.")
+
+if __name__ == "__main__":
+    start_game()
