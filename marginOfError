@@ -1,0 +1,28 @@
+import math
+
+# Z-scores for common confidence levels
+Z_SCORES = {
+    90: 1.645,
+    95: 1.96,
+    99: 2.576
+}
+
+def calculate_margin_of_error(confidence_level, std_dev, sample_size):
+    if confidence_level not in Z_SCORES:
+        raise ValueError("Supported confidence levels: 90, 95, 99")
+    
+    z = Z_SCORES[confidence_level]
+    margin_of_error = z * (std_dev / math.sqrt(sample_size))
+    return margin_of_error
+
+# Example usage
+if __name__ == "__main__":
+    try:
+        confidence = int(input("Enter confidence level (90, 95, or 99): "))
+        std_dev = float(input("Enter standard deviation: "))
+        sample_size = int(input("Enter sample size: "))
+
+        moe = calculate_margin_of_error(confidence, std_dev, sample_size)
+        print(f"\nMargin of Error (at {confidence}% confidence): {moe:.4f}")
+    except ValueError as e:
+        print(f"Error: {e}")
