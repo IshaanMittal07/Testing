@@ -1,0 +1,32 @@
+def check_normal_approximation(n, p):
+    """
+    Checks if the normal approximation to the binomial distribution is appropriate.
+
+    Parameters:
+    - n: number of trials
+    - p: probability of success on a single trial
+
+    Returns:
+    - A message indicating whether or not the normal approximation is appropriate.
+    """
+
+    np = n * p
+    nq = n * (1 - p)
+
+    print(f"n * p = {np}")
+    print(f"n * (1 - p) = {nq}")
+
+    if np >= 10 and nq >= 10:
+        print("✅ The normal approximation is appropriate.")
+    else:
+        print("❌ The normal approximation is NOT appropriate.")
+        if np < 10:
+            print(f"Note: n * p = {np} < 10")
+        if nq < 10:
+            print(f"Note: n * (1 - p) = {nq} < 10")
+
+# Example usage
+n = int(input("Enter the number of trials (n): "))
+p = float(input("Enter the probability of success (p): "))
+
+check_normal_approximation(n, p)
