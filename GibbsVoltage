@@ -1,0 +1,20 @@
+def calculate_gibbs_energy(n, voltage):
+    F = 96485  # Faraday's constant in C/mol
+    delta_G = -n * F * voltage
+    return delta_G
+
+# Input from user
+try:
+    n = float(input("Enter the number of moles of electrons (n): "))
+    voltage = float(input("Enter the cell potential (E) in volts: "))
+
+    delta_G = calculate_gibbs_energy(n, voltage)
+    print(f"\nΔG = {delta_G:.2f} J")
+
+    if delta_G < 0:
+        print("✅ The reaction is spontaneous.")
+    else:
+        print("❌ The reaction is non-spontaneous.")
+
+except ValueError:
+    print("Please enter valid numerical values for both n and voltage.")
