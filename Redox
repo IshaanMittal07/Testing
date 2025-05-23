@@ -1,0 +1,64 @@
+import re
+
+# Simplified periodic table oxidation states (for common elements only)
+oxidation_states = {
+    'H': 1,
+    'O': -2,
+    'Na': 1,
+    'Cl': -1,
+    'K': 1,
+    'Ca': 2,
+    'Mg': 2,
+    'Fe': [2, 3],
+    'Cu': [1, 2],
+    'Zn': 2,
+    'Ag': 1,
+    'Mn': [2, 4, 7],
+    'Cr': [2, 3, 6],
+    'Br': -1,
+    'I': -1,
+    # Add more as needed
+}
+
+def parse_species(species):
+    """ Extract element symbols and charges from a chemical species """
+    # e.g., Cr2O7^2- → {'Cr': 2, 'O': 7}, charge: -2
+    match = re.match(r"([A-Za-z0-9]+)(\^([0-9+-]+))?", species)
+    if not match:
+        return species, 0
+    formula = match.group(1)
+    charge_str = match.group(3)
+    charge = 0
+    if charge_str:
+        charge = int(charge_str.replace('+', '')) if '+' in charge_str else -int(charge_str.replace('-', ''))
+    return formula, charge
+
+def redox_solver(reactants, products):
+    print("Reactants:", reactants)
+    print("Products:", products)
+
+    changes = []
+    for r, p in zip(reactants, products):
+        r_formula, r_charge = parse_species(r)
+        p_formula, p_charge = parse_species(p)
+
+        if r_formula != p_formula:
+            changes.append((r, p, 'Change in species'))
+        elif r_charge != p_charge:
+            if p_charge > r_charge:
+                changes.append((r, p, 'Oxidation'))
+            else:
+                changes.append((r, p, 'Reduction'))
+        else:
+            changes.append((r, p, 'No redox change'))
+
+    print("\nRedox Analysis:")
+    for r, p, result in changes:
+        print(f"{r} → {p}: {result}")
+
+# Example usage
+# You can replace these with input() if you want user input instead
+reactants = ["Fe^2+", "Cr2O7^2-"]
+products = ["Fe^3+", "Cr^3+"]
+
+redox_solver(reactants, products)
