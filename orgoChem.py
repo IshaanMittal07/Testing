@@ -27,4 +27,5 @@ def draw_molecule_from_name(name):
         print(f"Error: {e}")
 
 # Example usage
-draw_molecule_from_name("butanol")
+draw_molecule_from_name("butanol");
+draw_molecile_from_name("ethanol");
