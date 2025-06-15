@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Father's Day X Mario + Street-Fighter </title>
+    <style>
+        body {
+            background-color: #e6f0fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            border: 2px solid #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            max-width: 600px;
+        }
+        .container:hover {
+            transform: scale(1.03);
+        }
+        .container h1 {
+            color: #2980b9;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+        }
+        .container p {
+            font-size: 1em;
+            color: #2980b9;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            font-family: 'Lora', serif;
+            line-height: 1.5;
+        }
+        .corner-image {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .top-left { top: -20px; left: -20px; }
+        .top-right { top: -20px; right: -20px; }
+        .bottom-left { bottom: -40px; left: -20px; }
+        .bottom-right { bottom: -40px; right: -20px; }
+        .mario { position: absolute; top: 10px; left: 10px; width: 80px; opacity: 0.9; }
+        .street-fighter { position: absolute; top: 10px; right: 10px; width: 80px; opacity: 0.9; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2021/02/11/15/40/mario-6005703_960_720.png" alt="Mario" class="mario">
+    <img src="https://www.fightersgeneration.com/news2021/char5/ryu-kofallstar-x-streetfighter.jpg" width = "500" height = "100" alt="Street Fighter" class="street-fighter">
+    <div class="container">
+        <h1>Happy Father's Day</h1>
+        <p>Thank you for everything you do for not just me but the whole family. You are always selfless and perform your role as Papa with great proficiency (A+). I am glad to have a father that is willing to be better for his children, the way you improved your anger management and patience is honestly remarkable, especially when you were patient with me where despite destroying the car twice, you let me continue driving and stayed supportive.</p>
+        <img src="img1.jpg" alt="papa1" class="corner-image top-left">
+        <img src="img2.jpg" alt="papa2" class="corner-image top-right">
+        <img src="img3.jpg" alt="papa3" class="corner-image bottom-left">
+        <img src="img4.jpg" alt="" class="corner-image bottom-right">
+    </div>
+</body>
+</html>
