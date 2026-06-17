@@ -1,0 +1,37 @@
+class JKLatch:
+    def __init__(self, q=0):
+        self.q = q
+
+    def update(self, j, k):
+        if j == 0 and k == 0:
+            pass            # No change
+        elif j == 0 and k == 1:
+            self.q = 0      # Reset
+        elif j == 1 and k == 0:
+            self.q = 1      # Set
+        elif j == 1 and k == 1:
+            self.q = 1 - self.q  # Toggle
+
+        return self.q
+
+# Create latch
+latch = JKLatch()
+
+print("JK Latch Simulator")
+print("Enter q to quit.\n")
+
+while True:
+    j = input("J (0/1): ")
+    if j.lower() == 'q':
+        break
+
+    k = input("K (0/1): ")
+
+    if j not in ('0', '1') or k not in ('0', '1'):
+        print("Invalid input.\n")
+        continue
+
+    q_next = latch.update(int(j), int(k))
+
+    print(f"Q = {q_next}")
+    print(f"Q̅ = {1 - q_next}\n")
